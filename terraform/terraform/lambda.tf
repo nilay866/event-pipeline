@@ -1,8 +1,8 @@
-resource "aws_lambda_function" "email_lambda" {
-  function_name = "tf-daily-report-generator"
+resource "aws_lambda_function" "daily_report" {
+  function_name = "daily-report-generator"
   role          = aws_iam_role.lambda_role.arn
-  runtime       = "python3.12"
   handler       = "lambda_function.lambda_handler"
+  runtime       = "python3.12"
 
-  filename = "lambda.zip"
+  filename = "lambda.zip"  # reference only
 }
