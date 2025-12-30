@@ -5,7 +5,7 @@ resource "aws_lambda_function" "daily_report" {
 
   handler = "lambda_function.lambda_handler"
 
-  filename         = "../lambda/lambda.zip"
-  source_code_hash = filebase64sha256("../lambda/lambda.zip")
+  filename         = "../../lambda/lambda.zip"
+  source_code_hash = filebase64sha256("../../lambda/lambda.zip")
 }
 
