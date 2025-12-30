@@ -4,7 +4,7 @@ resource "aws_scheduler_schedule" "daily" {
   schedule_expression = "cron(30 3 * * ? *)"
 
   target {
-    arn      = aws_lambda_function.email_lambda.arn
+    arn      = aws_lambda_function.processor.arn
     role_arn = aws_iam_role.lambda_role.arn
   }
 
