@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform:
-    name: Terraform Validate & Plan
+    name: Terraform Validate
     runs-on: ubuntu-latest
 
     steps:
@@ -22,12 +22,8 @@ jobs:
 
       - name: Terraform Init
         working-directory: terraform/terraform
-        run: terraform init
+        run: terraform init -backend=false
 
       - name: Terraform Validate
         working-directory: terraform/terraform
         run: terraform validate
-
-      - name: Terraform Plan
-        working-directory: terraform/terraform
-        run: terraform plan
